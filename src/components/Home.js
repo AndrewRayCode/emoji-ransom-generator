@@ -33,7 +33,9 @@ function getEmojiString( input:string, includeRandom:?boolean ):string {
     return output.split( / +/ )
         .join( '&nbsp;&nbsp;&nbsp;&nbsp;' )
         .replace( /F/g, 'Ⓕ' )
-        .replace( /B/g, 'Ⓑ' );
+        .replace( /B/g, 'Ⓑ' )
+        .replace( /K/g, 'Ⓚ' )
+        .replace( /Q/g, 'Ⓠ' );
 
 }
 
