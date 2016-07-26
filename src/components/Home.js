@@ -1,6 +1,5 @@
 import React, { Component, } from 'react';
 import { alphabet, compounds, } from 'emoji-alphabet';
-import autobind from 'autobind-decorator';
 import styles from './home.scss';
 
 function getRandom( arr:Array ):any {
