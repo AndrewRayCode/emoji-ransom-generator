@@ -30,8 +30,7 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: 'src/index.html',
-            alwaysWriteToDisk: true,
+            template: 'src/index.html'
         })
     ]
 };

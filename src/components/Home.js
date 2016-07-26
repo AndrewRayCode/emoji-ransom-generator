@@ -83,7 +83,8 @@ export default class Home extends Component {
             />
             <div className={ styles.footer }>
                 <div className={ styles.footerContent }>
-                    By <a href="https://twitter.com/andrewray" target="_blank">@andrewray</a>
+                    By <a href="https://twitter.com/andrewray" target="_blank">@andrewray</a> |{' '}
+                    <a href="https://github.com/DelvarWorld/emoji-ransom-generator" target="_blank">Github Repository</a>
                 </div>
             </div>
         </div>;

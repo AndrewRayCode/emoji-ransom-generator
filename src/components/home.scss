@@ -6,9 +6,10 @@ body, html {
 }
 
 .input {
-    border:1px solid #333;
+    border:1px solid #1A728C;
     border-radius:2px;
-    box-shadow:0 0 4px #ddd, inset 0 2px 4px #aaa;
+    box-shadow:0 0 4px #ddd, inset 0 2px 8px #A9B5B8;
+    color:darken( #1A728C, 10% );
     font-size:18px;
     padding:4px 8px;
     width:800px;
@@ -17,7 +18,7 @@ body, html {
 }
 
 .output {
-    font-size:22px;
+    font-size:42px;
 }
 
 .footer {
@@ -26,7 +27,7 @@ body, html {
     font-size:18px;
     margin:50px 0 0;
 
-    a { color: #FAB7BE }
+    a { color: lighten( #78C8DA, 20% ) }
 
     .footerContent {
         padding:18px;

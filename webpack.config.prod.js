@@ -7,18 +7,17 @@ module.exports = {
         './src/index'
     ],
     output: {
-        path: path.join(__dirname, 'dist'),
+        path: __dirname,
         filename: 'bundle.js',
-        publicPath: '/dist/'
+        publicPath: '/'
     },
     progress: true,
     module: {
         loaders: [
-            { test: /\.jsx?$/, exclude: /node_modules/, loaders: ['react-hot', 'babel']},
+            { test: /\.jsx?$/, exclude: /node_modules/, loaders: [ 'react-hot', 'babel?presets[]=es2015&presets[]=react&presets[]=stage-0&plugins[]=transform-decorators-legacy' ] },
             { test: /\.scss$/, loaders: [
                 'style',
                 'css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]',
-                'autoprefixer?browsers=last 2 version',
                 'sass?outputStyle=expanded&sourceMap'
             ] },
             { test: /(\.jpg|\.png)$/, loader: 'url?limit=10000' }
@@ -29,25 +28,23 @@ module.exports = {
         new ExtractTextPlugin('[name]-[chunkhash].css', {allChunks: true}),
 
         new webpack.DefinePlugin({
-            __CLIENT__: true,
-            __SERVER__: false,
-            __DEVELOPMENT__: false,
-            __DEVTOOLS__: false
-        }),
-
-        new webpack.DefinePlugin({
             'process.env': {
                 // Useful to reduce the size of client-side libraries, e.g. react
                 NODE_ENV: JSON.stringify('production')
             }
         }),
 
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: 'src/index.html'
+        })
+
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({
-          compress: {
-            warnings: false
-          }
+            compress: {
+                warnings: false
+            }
         })
 
     ]
