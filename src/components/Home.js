@@ -71,7 +71,12 @@ export default class Home extends Component {
 
     onFocus( event:Object ):void {
 
-        event.target.select();
+        const { target, } = event;
+        if( target.setSelectionRange ) {
+            target.setSelectionRange( 0, 9999 );
+        } else {
+            target.select();
+        }
 
     }
 
