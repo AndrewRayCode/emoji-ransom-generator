@@ -60,7 +60,7 @@ export default class Home extends Component {
 
         this.onChange = this.onChange.bind( this );
         this.onRandomizeToggle = this.onRandomizeToggle.bind( this );
-        this.onFocus = this.onFocus.bind( this );
+        this.onOutputClick = this.onOutputClick.bind( this );
 
         this.state = {
             value: '',
@@ -69,11 +69,10 @@ export default class Home extends Component {
         };
     }
 
-    onFocus( event:Object ):void {
+    onOutputClick( event:Object ):void {
 
         const { target, } = event;
 
-        target.focus();
         if( target.setSelectionRange ) {
             target.selectionStart = 0
             target.selectionEnd = 999
@@ -142,8 +141,8 @@ export default class Home extends Component {
                         }}
                     />
                     <textarea
-                        onFocus={ this.onFocus }
-                        resizable={ false }
+                        readOnly
+                        onClick={ this.onOutputClick }
                         className={ styles.output }
                         placeholder="Emoji Text Here"
                         onChange={ this.onChange }
