@@ -5,6 +5,11 @@ body, html {
     text-align:center;
 }
 
+.wrap {
+    max-width:1010px;
+    margin:10px auto;
+}
+
 .input {
     border:1px solid #1A728C;
     border-radius:2px;
@@ -12,7 +17,7 @@ body, html {
     color:darken( #1A728C, 10% );
     font-size:18px;
     padding:4px 8px;
-    width:800px;
+    width:80%;
     height:60px;
     margin:20px 0;
 }
@@ -63,12 +68,13 @@ body, html {
 
 .outputWrap {
     position:relative;
-    width:800px;
+    width:80%;
     margin:20px auto 0;
     overflow:hidden;
 }
 
 .footer {
+    letter-spacing:1px;
     background:#1A728C;
     color:#FFF;
     font-size:18px;

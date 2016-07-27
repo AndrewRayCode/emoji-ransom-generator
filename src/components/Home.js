@@ -101,56 +101,57 @@ export default class Home extends Component {
         const { value, randomize } = this.state;
 
         return <div>
-            <img
-                alt="Emoji Ransom Generator"
-                src={ require( '../../logo.jpg' ) }
-                width={ 1010 }
-                height={ 228 }
-            />
-            <textarea
-                className={ styles.input }
-                placeholder={ defaultString }
-                onChange={ this.onChange }
-                type="text"
-                value={ this.state.value }
-            />
-            <label
-                className={ styles.label }
-            >
-                Randomize Emojis when there's more than one option?
-                <input
-                    type="checkbox"
-                    checked={ randomize }
-                    onChange={ this.onRandomizeToggle }
-                />
-            </label>
-            <div className={ styles.outputWrap }>
-                <div
-                    className={ styles.outputBlind }
-                    dangerouslySetInnerHTML={{
-                        __html: this.state.output
-                            .replace( / /g, '&nbsp;' )
-                            .replace( /\n/g, '<br />' )
-                    }}
+            <div className={ styles.wrap }>
+                <img
+                    alt="Emoji Ransom Generator"
+                    src={ require( '../../logo.jpg' ) }
+                    width="100%"
                 />
                 <textarea
-                    onFocus={ this.onFocus }
-                    resizable={ false }
-                    className={ styles.output }
-                    placeholder="Emoji Text Here"
+                    className={ styles.input }
+                    placeholder={ defaultString }
                     onChange={ this.onChange }
                     type="text"
-                    value={ this.state.output }
+                    value={ this.state.value }
                 />
-            </div>
-            <div className={ styles.howTo }>
-                Click once to select, then copy!
+                <label
+                    className={ styles.label }
+                >
+                    Randomize Emojis when there's more than one option?
+                    <input
+                        type="checkbox"
+                        checked={ randomize }
+                        onChange={ this.onRandomizeToggle }
+                    />
+                </label>
+                <div className={ styles.outputWrap }>
+                    <div
+                        className={ styles.outputBlind }
+                        dangerouslySetInnerHTML={{
+                            __html: this.state.output
+                                .replace( / /g, '&nbsp;' )
+                                .replace( /\n/g, '<br />' )
+                        }}
+                    />
+                    <textarea
+                        onFocus={ this.onFocus }
+                        resizable={ false }
+                        className={ styles.output }
+                        placeholder="Emoji Text Here"
+                        onChange={ this.onChange }
+                        type="text"
+                        value={ this.state.output }
+                    />
+                </div>
+                <div className={ styles.howTo }>
+                    Click once to select, then copy!
+                </div>
             </div>
             <div className={ styles.footer }>
                 <div className={ styles.footerContent }>
-                    By <a href="https://twitter.com/andrewray" target="_blank">@andrewray</a> |{' '}
-                    <a href="https://github.com/DelvarWorld/emoji-ransom-generator" target="_blank">Github Repository</a> |{' '}
-                    <a href="https://www.coinbase.com/andrewray" target="_blank">Buy me coffee? :)</a>
+                    by <a href="https://twitter.com/andrewray" target="_blank">@andrewray</a> |{' '}
+                    <a href="https://github.com/delvarworld/emoji-ransom-generator" target="_blank">github repository</a> |{' '}
+                    <a href="https://www.coinbase.com/andrewray" target="_blank">buy me coffee? :)</a>
                 </div>
             </div>
         </div>;
