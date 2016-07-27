@@ -1,6 +1,8 @@
 import React, { Component, } from 'react';
 import { alphabet, compounds, } from 'emoji-alphabet';
+
 import styles from './home.scss';
+import GoogleAd from './GoogleAd';
 
 const defaultString = 'Your Message Here';
 
@@ -154,6 +156,9 @@ export default class Home extends Component {
                     Click once to select, then copy!
                 </div>
             </div>
+
+            <GoogleAd />
+
             <div className={ styles.footer }>
                 <div className={ styles.footerContent }>
                     by <a href="https://twitter.com/andrewray" target="_blank">@andrewray</a> |{' '}
