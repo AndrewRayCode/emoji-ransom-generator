@@ -75,7 +75,8 @@ export default class Home extends Component {
 
         target.focus();
         if( target.setSelectionRange ) {
-            target.setSelectionRange( 0, 9999 );
+            target.selectionStart = 0
+            target.selectionEnd = 999
         } else {
             target.select();
         }
